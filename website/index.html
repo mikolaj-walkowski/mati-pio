@@ -1,0 +1,220 @@
+R"(
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" http-equiv="" content="15">
+  <title>LedMatrix</title>
+  <link rel="icon" href=https://i.ibb.co/pQtKHwN/Shrigma-Spook.png>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/3.6.2/fetch.min.js"
+    integrity="sha512-1Gn7//DzfuF67BGkg97Oc6jPN6hqxuZXnaTpC9P5uw8C6W4yUNj5hoS/APga4g1nO2X6USBb/rXtGzADdaVDeA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    function BTN_Activity(str) {
+      fetch(window.location.href + "swap?" + new URLSearchParams({
+        mode: str,
+      }), {
+        method: "GET",
+      }).catch(error => {
+        console.log(error)
+      })
+    }
+  </script>
+</head>
+
+<body>
+  <div class="site">
+    <div class="body">
+      <div class="column">
+        <button type="button" class="col">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="settings"
+            viewBox="0 0 488.189 488.189" xml:space="preserve">
+            <g>
+              <g>
+                <path
+                  d="M326.9,67.166c6.7-14.5,13.5-28.9,20.6-44.2c-78.6-33.1-155.2-31.5-228.4,12.1C48.3,77.166,9.9,141.166,0,223.566    c16.8,1.5,32.7,2.9,48.6,4.2C57.3,103.266,194.9,7.766,326.9,67.166z" />
+                <path
+                  d="M484.7,202.466c-15.8,2.7-31.5,5.5-47.9,8.3c8.5,57-3.3,108.4-38.1,153.4c-34.6,44.8-81,69.4-137.7,75.7    c1.4,16.1,2.8,31.8,4.1,47.5C383.8,483.166,511,363.966,484.7,202.466z" />
+                <path
+                  d="M47.9,262.066c-15.1,1.3-30.8,2.7-46.5,4c3.7,99.5,90.5,211.5,221.4,222.1c1.4-16.1,2.8-31.9,4.1-47.2    C124.5,423.866,65.2,364.566,47.9,262.066z" />
+                <path
+                  d="M398.9,125.566c12.2,15.8,21.6,33.2,28.9,52.4c15.2-5.5,30.2-11,45.9-16.7c-18.1-48.2-47.6-86.6-89.5-116.7    c-9.3,13.3-18.5,26.3-28,39.9C372.4,96.366,386.8,109.866,398.9,125.566z" />
+                <path
+                  d="M267.2,384.166v-19.1c16.3-3.1,32.1-9.6,46.3-19.4l13.6,13.6c5.1,5,13.2,5,18.3,0l14.1-14.1c5-5.1,5-13.2,0-18.3    l-13.8-13.8c9.6-14.2,15.9-30,18.9-46.2h19.6c7.1,0,12.9-5.8,12.9-12.9v-20c0-7.1-5.8-12.9-12.9-12.9h-19.7    c-3.1-16.2-9.5-31.8-19.1-45.9l14-14c5-5.1,5-13.2,0-18.3l-14.3-14.2c-5.1-5-13.2-5-18.3,0l-14,14c-14.1-9.6-29.8-16-46-19.1    v-19.7c0-7.1-5.8-12.9-12.9-12.9h-20c-7.1,0-12.9,5.8-12.9,12.9v19.6c-16.2,3-32,9.4-46.2,19l-13.7-13.6c-5.1-5-13.2-5-18.3,0    l-14.1,14.2c-5,5.1-5,13.2,0,18.3l13.6,13.6c-9.8,14.2-16.2,30-19.3,46.3h-19.1c-7.1,0-12.9,5.8-12.9,12.9v20    c0,7.1,5.8,12.9,12.9,12.9h19c3.1,16.4,9.5,32.3,19.2,46.5l-13.2,13.5c-5,5.1-5,13.2,0,18.3l14.1,14.1c5.1,5,13.2,5,18.3,0    l13.4-13.4c14.3,9.7,30.2,16.1,46.6,19.2v19c0,7.1,5.8,12.9,12.9,12.9h20C261.4,397.066,267.2,391.266,267.2,384.166z     M197,291.266c-26-26-26.1-68.2-0.1-94.2s68.2-26.1,94.2-0.1s26.1,68.2,0.1,94.2C265.3,317.166,223.1,317.266,197,291.266z" />
+              </g>
+            </g>
+        </button>
+        <button type="button" class="col"> </button>
+        <button type="button" class="col"> </button>
+        <button type="button" class="col"> </button>
+        <button type="button" class="col"> </button>
+
+      </div>
+      <div class="main">
+      </div>
+    </div>
+    <div class="footer">
+      <div class="main-activity">
+
+      </div>
+      <div id="activity-dash">
+        <div id="activity-container">
+          <div class="activity" onclick="BTN_Activity('FFT') "> </div>
+          <div class="activity" onclick="BTN_Activity('CLOCK') "> </div>
+          <div class="activity" onclick="BTN_Activity('REMOTE') "> </div>
+        </div>
+        <div class="pull_tab">
+          <div class="arrow-left"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+<style>
+  :root {
+    --rc: 62;
+    --sc: 185;
+    --tc: 265;
+    color: hsl(62, 16%, 70%);
+    font-family: monospace, monospace;
+  }
+
+  body {
+    padding: 0;
+    margin: 0;
+  }
+
+  svg {
+    width: 50%;
+    fill: hsl(var(--sc), 60%, 15%);
+  }
+
+  #settings {
+    width: 80%;
+  }
+
+  button.col {
+    background-color: hsl(var(--sc), 60%, 50%);
+    width: 60px;
+    aspect-ratio: 0.8;
+    border: none;
+    margin-top: 10px;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 12px;
+    text-align: center;
+  }
+
+  button.col:hover {
+    background-color: hsl(var(--sc), 60%, 30%);
+  }
+
+  button.col:hover svg {
+    fill: hsl(var(--sc), 60%, 40%);
+  }
+
+  .site {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-width: 100vw;
+    background-color: hsl(var(--rc), 10%, 10%);
+  }
+
+
+  .body {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    min-width: 100%;
+  }
+
+  .main {
+    flex: 1;
+  }
+
+  .column {
+    width: 75px;
+    background-color: hsl(var(--rc), 10%, 20%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer {
+    background-color: hsl(var(--rc), 10%, 15%);
+    height: 100px;
+  }
+
+
+  .footer .main-activity {
+    height: 100%;
+    background-color: hsl(var(--tc), 60%, 50%);
+    aspect-ratio: 1;
+    z-index: 3;
+    position: relative;
+  }
+
+  .activity {
+    height: 90px;
+    margin-top: 5px;
+    margin-right: 10px;
+    aspect-ratio: 1;
+    background-color: hsl(var(--tc), 20%, 50%);
+    border-radius: 10px;
+  }
+
+  .activity:hover {
+    background-color: hsl(var(--tc), 20%, 40%);
+  }
+
+  #activity-dash {
+    height: 100px;
+    width: 600px;
+    position: absolute;
+    bottom: 0px;
+    left: -400px;
+    z-index: 2;
+    transition: left 250ms;
+  }
+
+  #activity-container {
+    width: 490px;
+    height: 100%;
+    padding-left: 10px;
+    display: flex;
+    float: left;
+    background-color: hsl(var(--rc), 10%, 25%);
+  }
+
+  .pull_tab {
+    float: right;
+    height: 100%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: hsl(var(--rc), 10%, 25%);
+    display: inline-block;
+    position: relative;
+    left: -45px;
+  }
+
+  .arrow-left {
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(25%, -50%);
+    border-left: 35px solid hsl(var(--rc), 10%, 15%);
+  }
+
+  #activity-dash:hover {
+    left: 100px;
+  }
+</style>
+
+</html>
+)"
