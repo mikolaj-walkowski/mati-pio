@@ -18,9 +18,8 @@
 // TCP server at port 80 will respond to HTTP requests
 
 void TaskMaster(void *pvParams) {
-
   for (;;) {
-    tasks[currentTask].loop(NULL);
+    // tasks[currentTask].loop(NULL);
   }
 }
 
@@ -38,7 +37,11 @@ void setup() {
   tasks[FFT] = tFFT::createTask();
   tasks[CLOCK] = tClock::createTask();
   tasks[REMOTE] = tRemote::createTask();
-  currentTask = CLOCK;
+
+  for (auto &&t : tasks) {
+    // t.init(NULL);
+  }
+  currentTask = FFT;
 
   xTaskCreatePinnedToCore(TaskMaster, "TaskMaster" // A name just for humans
                           ,

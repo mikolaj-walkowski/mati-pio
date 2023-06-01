@@ -20,8 +20,10 @@ const float band_sizes[ROWS] = {
     2,  3,  5,  7,  9,   13,  18,  25,
     36, 50, 69, 97, 135, 189, 264, SAMPLE_BUFFER_SIZE / 2};
 
-static float maximums[ROWS], curr[ROWS], bands[ROWS], maxVal = 1.f;
+static float maximums[ROWS], curr[ROWS], bands[ROWS],
+    maxVal = 5.f, currMaxVal = 1.f, decay = 2.f;
 
+static float dT = 0;
 static const char *path = "FFT";
 
 void task(void *);

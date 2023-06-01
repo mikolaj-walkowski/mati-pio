@@ -52,7 +52,7 @@ void init();
 
 void showTime(uint8_t hour, uint8_t minute, bool h12);
 
-void displayNumber(const Number &num, const uint8_t &pos);
+void displayChar(char c, Point p);
 
 void test();
 

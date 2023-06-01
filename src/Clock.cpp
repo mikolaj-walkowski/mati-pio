@@ -12,10 +12,10 @@ void tClock::init(void *_p) {
 }
 
 void tClock::loop(void *_p) {
+  led::clear();
   led::showTime(ezt::hour(), ezt::minute(), false);
+  led::showTime(ezt::day(), ezt::month(), true);
+  led::show();
 }
 void tClock::onInternet() {}
-Task tClock::createTask() {
-  init(NULL);
-  return Task{init, loop, onInternet, path};
-}
+Task tClock::createTask() { return Task{init, loop, onInternet, {}, CLOCK}; }

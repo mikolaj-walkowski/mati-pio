@@ -1,18 +1,22 @@
 #pragma once
 #ifndef TASK_HEADER
 #define TASK_HEADER
+#include "Settings.h"
 #include <Arduino.h>
+#include <vector>
+
 typedef void (*Function)(void *);
 typedef void (*WebHandler)();
+
+enum TaskNames { FFT, CLOCK, REMOTE, TASK_SIZE };
 
 struct Task {
   Function init;
   Function loop;
   WebHandler on;
-  const char *path;
+  std::vector<Setting *> settings;
+  TaskNames name;
 };
-
-enum TaskNames { FFT, CLOCK, REMOTE, TASK_SIZE };
 
 extern String TaskStrings[TASK_SIZE];
 
